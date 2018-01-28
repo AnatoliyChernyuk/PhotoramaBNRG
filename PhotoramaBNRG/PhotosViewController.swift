@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PhotosViewController: UIViewController {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    var store: PhotoStore!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        store.fetchInterstingPhotos()
     }
 
     override func didReceiveMemoryWarning() {
