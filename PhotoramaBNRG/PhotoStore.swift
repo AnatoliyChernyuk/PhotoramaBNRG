@@ -33,6 +33,8 @@ struct PhotoStore {
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
+            let httpResponse = response as! HTTPURLResponse
+            print("***** The status code of the response to the interesting photos fetch is \(httpResponse.statusCode) with header fields \(httpResponse.allHeaderFields)")
             let result = self.processPhotosRequest(data: data, error: error)
             OperationQueue.main.addOperation {
                 completion(result)
@@ -54,6 +56,8 @@ struct PhotoStore {
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
             let result = self.processImageRequest(data: data, error: error)
+            let httpResponse = response as! HTTPURLResponse
+            print("***** The status code of the response to the image fetch is \(httpResponse.statusCode) with header fields \(httpResponse.allHeaderFields)")
             OperationQueue.main.addOperation {
                 completion(result)
             }
