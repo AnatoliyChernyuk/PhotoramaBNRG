@@ -23,6 +23,7 @@ enum PhotosResult {
 }
 
 struct PhotoStore {
+    let imageStore = ImageStore()
     private let session: URLSession = {
         let config = URLSessionConfiguration.default
         return URLSession(configuration: config)
@@ -51,6 +52,14 @@ struct PhotoStore {
     }
     
     func fetchImage(for photo: Photo, completion: @escaping (ImageResult) -> Void) {
+        let photoKey = photo.photoID
+        if let image = imageStore.image(forKey: photoKey) {
+            OperationQueue.main.addOperation {
+                completion(.success(image))
+            }
+            return
+        }
+        
         let photoURL = photo.remoteURL
         let request = URLRequest(url: photoURL)
         let task = session.dataTask(with: request) {
@@ -58,6 +67,11 @@ struct PhotoStore {
             let result = self.processImageRequest(data: data, error: error)
             let httpResponse = response as! HTTPURLResponse
             print("***** The status code of the response to the image fetch is \(httpResponse.statusCode) with header fields \(httpResponse.allHeaderFields)")
+            
+            if case let .success(image) = result {
+                self.imageStore.setImage(image, forKey: photoKey)
+            }
+            
             OperationQueue.main.addOperation {
                 completion(result)
             }
