@@ -22,14 +22,28 @@ enum PhotosResult {
     case failure(Error)
 }
 
+//Chapter 20 Silver Challenge
+enum PhotoType {
+    case interesting
+    case recent
+}
+
 struct PhotoStore {
     private let session: URLSession = {
         let config = URLSessionConfiguration.default
         return URLSession(configuration: config)
     }()
     
-    func fetchInterstingPhotos(completion: @escaping (PhotosResult) -> Void) {
-        let url = FlickrAPI.interestingPhotosURL
+    func fetchPhotos(of type: PhotoType, completion: @escaping (PhotosResult) -> Void) {
+        
+        //Chapter 20 Silver Challenge
+        let url: URL
+        if type == .interesting {
+            url = FlickrAPI.interestingPhotosURL
+        } else {
+            url = FlickrAPI.recentPhotosURL
+        }
+        
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
