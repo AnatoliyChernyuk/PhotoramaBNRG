@@ -10,6 +10,7 @@
 		605CFB9F2025FA7100C6330F /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605CFB9E2025FA7100C6330F /* PhotoDataSource.swift */; };
 		605CFBA120260B6200C6330F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605CFBA020260B6200C6330F /* PhotoCollectionViewCell.swift */; };
 		605CFBA32026654600C6330F /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605CFBA22026654600C6330F /* ImageStore.swift */; };
+		605CFBA5202671A400C6330F /* PhotoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605CFBA4202671A400C6330F /* PhotoInfoViewController.swift */; };
 		60EFDB38201DF59B00BD553C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EFDB37201DF59B00BD553C /* AppDelegate.swift */; };
 		60EFDB3A201DF59B00BD553C /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EFDB39201DF59B00BD553C /* PhotosViewController.swift */; };
 		60EFDB3D201DF59B00BD553C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60EFDB3B201DF59B00BD553C /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		605CFB9E2025FA7100C6330F /* PhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
 		605CFBA020260B6200C6330F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		605CFBA22026654600C6330F /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		605CFBA4202671A400C6330F /* PhotoInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoViewController.swift; sourceTree = "<group>"; };
 		60EFDB34201DF59B00BD553C /* PhotoramaBNRG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoramaBNRG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60EFDB37201DF59B00BD553C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60EFDB39201DF59B00BD553C /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				60EFDB37201DF59B00BD553C /* AppDelegate.swift */,
 				60EFDB49201DFD4500BD553C /* FlickrAPI.swift */,
 				60EFDB4D201E1F8900BD553C /* Photo.swift */,
+				605CFBA4202671A400C6330F /* PhotoInfoViewController.swift */,
 				605CFBA22026654600C6330F /* ImageStore.swift */,
 				605CFB9E2025FA7100C6330F /* PhotoDataSource.swift */,
 				605CFBA020260B6200C6330F /* PhotoCollectionViewCell.swift */,
@@ -162,6 +165,7 @@
 				605CFBA120260B6200C6330F /* PhotoCollectionViewCell.swift in Sources */,
 				60EFDB38201DF59B00BD553C /* AppDelegate.swift in Sources */,
 				60EFDB4E201E1F8900BD553C /* Photo.swift in Sources */,
+				605CFBA5202671A400C6330F /* PhotoInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
