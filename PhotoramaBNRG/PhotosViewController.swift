@@ -72,8 +72,21 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         }
         
     }
+    
 }
 
+//Chapter 21 Silver Challenge
+extension PhotosViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let side = (view.bounds.width - 10.0) / 4.0
+        return CGSize(width: side, height: side)
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+}
 
 
 
